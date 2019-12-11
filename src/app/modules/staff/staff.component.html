@@ -37,7 +37,7 @@
   </tbody>
 </nz-table>
 
-<nz-modal [nzWidth]= "1500" [(nzVisible)]="isVisible" [nzTitle]="title" [nzFooter]="null" (nzOnCancel)="handleCancel()"
+<nz-modal [nzWidth]="500" [(nzVisible)]="isVisible" [nzTitle]="title" [nzFooter]="null" (nzOnCancel)="handleCancel()"
   (nzOnOk)="handleOk()">
   <app-staff-data *ngIf="isVisible" [id]="id" (cusOnClose)=" handleCancel()"></app-staff-data>
 </nz-modal>

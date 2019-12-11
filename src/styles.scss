@@ -2,3 +2,14 @@
 nz-input-number {
   width: 100% !important;
 }
+
+nz-date-picker {
+  width: 100%;
+
+  >nz-picker {
+    >span {
+      width: 100%;
+      ;
+    }
+  }
+}
