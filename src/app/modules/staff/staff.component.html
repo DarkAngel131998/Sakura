@@ -1,0 +1,43 @@
+<div nz-row nzType="flex" style="margin-bottom: 20px;">
+  <div nz-col nzSpan="12"><button nz-button (click)="showModal()" nzType="primary">Add Project</button></div>
+  <div nz-col nzSpan="12">
+    <nz-input-group nzSearch [nzAddOnAfter]="search">
+      <input [(ngModel)]="searchText" (keyup.enter)="getStaffs()" type="text" nz-input
+        placeholder="Nhập tên, dịa chỉ hoặc email" />
+    </nz-input-group>
+    <ng-template #search>
+      <button nz-button nzType="primary" nzSearch (click)="getStaffs()"><i nz-icon nzType="search"></i></button>
+    </ng-template>
+  </div>
+</div>
+
+<nz-table #ajaxTable nzShowSizeChanger [nzFrontPagination]="false" [nzData]="listOfData" [nzLoading]="loading"
+  [nzTotal]="total" [(nzPageIndex)]="pageIndex" [(nzPageSize)]="pageSize" (nzPageIndexChange)="getStaffs()"
+  (nzPageSizeChange)="getStaffs(true)">
+  <thead>
+    <tr>
+      <th>STT</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of ajaxTable.data;let i = index">
+      <td class="text-center">{{ ((pageIndex - 1)*pageSize) + (i +1)}}</td>
+      <td>{{ data.name}}</td>
+      <td>{{ data.description }}</td>
+      <td>
+        <button nz-button [nzType]="'primary'" (click)="showModal(data.id)">Edit</button>
+        <nz-divider nzType="vertical"></nz-divider>
+        <button nz-button [nzType]="'primary'" nz-popconfirm nzPopconfirmTitle="Are you sure delete this field?"
+          nzOkText="ok" nzCancelText="cancel" (nzOnConfirm)="confirm(data.id)" (nzOnCancel)="cancel()">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
+
+<nz-modal [nzWidth]= "1500" [(nzVisible)]="isVisible" [nzTitle]="title" [nzFooter]="null" (nzOnCancel)="handleCancel()"
+  (nzOnOk)="handleOk()">
+  <app-staff-data *ngIf="isVisible" [id]="id" (cusOnClose)=" handleCancel()"></app-staff-data>
+</nz-modal>

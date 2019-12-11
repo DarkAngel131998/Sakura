@@ -1,0 +1,80 @@
+ <form nz-form *ngIf="validateForm" [formGroup]="validateForm" (ngSubmit)="submitForm()">
+   <nz-form-item>
+     <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="name">Name of Project</nz-form-label>
+     <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your Name">
+       <input nz-input formControlName="name" placeholder="name" id="name" />
+     </nz-form-control>
+   </nz-form-item>
+   <nz-form-item>
+     <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="member" nzRequired>Member</nz-form-label>
+     <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your Age">
+       <input nz-input formControlName="member" placeholder="member" id="member" />
+     </nz-form-control>
+   </nz-form-item>
+   <nz-form-item>
+     <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="description" nzRequired>Description</nz-form-label>
+     <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your Age">
+       <input nz-input formControlName="description" placeholder="description" id="description" />
+     </nz-form-control>
+   </nz-form-item>
+   <nz-form-item>
+     <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>StartDate</nz-form-label>
+     <nz-form-control [nzSm]="16" [nzXs]="24">
+       <nz-date-picker formControlName="startdate"></nz-date-picker>
+     </nz-form-control>
+   </nz-form-item>
+   <nz-form-item>
+     <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>FinishDate</nz-form-label>
+     <nz-form-control [nzSm]="16" [nzXs]="24">
+       <nz-date-picker formControlName="finishdate"></nz-date-picker>
+     </nz-form-control>
+   </nz-form-item>
+   <nz-form-item>
+     <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="age" nzRequired>Number of Bug Test</nz-form-label>
+     <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your Age">
+       <nz-input-number [nzMin]="0" [nzMax]="1000" formControlName="bugtest" id="bugtest"  nz-input>
+       </nz-input-number>
+     </nz-form-control>
+   </nz-form-item>
+   <nz-form-item>
+     <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="age" nzRequired>Number of Bug UAT</nz-form-label>
+     <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your Age">
+       <nz-input-number [nzMin]="1" [nzMax]="1000" formControlName="buguat" id="buguat"  nz-input>
+       </nz-input-number>
+     </nz-form-control>
+   </nz-form-item>
+   <nz-form-item>
+     <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="age" nzRequired>Plan cost</nz-form-label>
+     <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your Age">
+       <nz-input-number  formControlName="pcost" id="pcost"  nz-input>
+       </nz-input-number>
+     </nz-form-control>
+   </nz-form-item>
+   <nz-form-item>
+     <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="acost" nzRequired>Actual cost</nz-form-label>
+     <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your Age">
+       <nz-input-number  formControlName="acost" id="acost"  nz-input>
+       </nz-input-number>
+     </nz-form-control>
+   </nz-form-item>
+   <nz-form-item>
+     <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="cssscore" nzRequired>CSS Score</nz-form-label>
+     <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your Age">
+       <nz-input-number [nzMin]="1" [nzMax]="100" formControlName="cssscore" id="cssscore"  nz-input>
+       </nz-input-number>
+     </nz-form-control>
+   </nz-form-item>
+   <nz-form-item>
+     <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="age" nzRequired>Status</nz-form-label>
+     <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your Age">
+       <label nz-checkbox formControlName="status">Finished</label>
+     </nz-form-control>
+   </nz-form-item>
+   <nz-form-item>
+     <nz-form-control [nzOffset]="6" [nzSpan]="12">
+       <button nz-button type="submit" style="margin-right: 10px;" nzType="primary"
+         [disabled]="!validateForm.valid">Submit</button>
+       <button nz-button (click)="resetForm($event)">Reset</button>
+     </nz-form-control>
+   </nz-form-item>
+ </form>
