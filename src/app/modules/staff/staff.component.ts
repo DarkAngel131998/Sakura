@@ -86,5 +86,8 @@ export class StaffComponent implements OnInit {
   }
 
 
+  viewDetail(id: number) {
+    this.router.navigateByUrl(`/staff/detail/${id}`);
+  }
 
 }

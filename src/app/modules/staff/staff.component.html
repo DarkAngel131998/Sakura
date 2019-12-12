@@ -24,9 +24,9 @@
   </thead>
   <tbody>
     <tr *ngFor="let data of ajaxTable.data;let i = index">
-      <td class="text-center">{{ ((pageIndex - 1)*pageSize) + (i +1)}}</td>
-      <td>{{ data.name}}</td>
-      <td>{{ data.description }}</td>
+      <td (click)="viewDetail(data.id)" class="text-center">{{ ((pageIndex - 1)*pageSize) + (i +1)}}</td>
+      <td (click)="viewDetail(data.id)">{{ data.name}}</td>
+      <td (click)="viewDetail(data.id)">{{ data.description }}</td>
       <td>
         <button nz-button [nzType]="'primary'" (click)="showModal(data.id)">Edit</button>
         <nz-divider nzType="vertical"></nz-divider>
