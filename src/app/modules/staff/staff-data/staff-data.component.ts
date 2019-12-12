@@ -23,7 +23,7 @@ export class StaffDataComponent implements OnInit {
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) { }
 
   async ngOnInit() {
     this.validateForm = this.fb.group({
@@ -38,7 +38,7 @@ export class StaffDataComponent implements OnInit {
       pcost: [null, [Validators.required]],
       acost: [null, [Validators.required]],
       cssscore: [null, [Validators.required]],
-      status: [null]
+      status: Boolean
     });
     if (!this.id) {
       this.id = +this.route.snapshot.params.id;

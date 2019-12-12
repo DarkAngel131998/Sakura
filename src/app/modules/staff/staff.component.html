@@ -2,8 +2,7 @@
   <div nz-col nzSpan="12"><button nz-button (click)="showModal()" nzType="primary">Add Project</button></div>
   <div nz-col nzSpan="12">
     <nz-input-group nzSearch [nzAddOnAfter]="search">
-      <input [(ngModel)]="searchText" (keyup.enter)="getStaffs()" type="text" nz-input
-        placeholder="Nhập tên, dịa chỉ hoặc email" />
+      <input [(ngModel)]="searchText" (keyup.enter)="getStaffs()" type="text" nz-input placeholder="Tên dự án" />
     </nz-input-group>
     <ng-template #search>
       <button nz-button nzType="primary" nzSearch (click)="getStaffs()"><i nz-icon nzType="search"></i></button>

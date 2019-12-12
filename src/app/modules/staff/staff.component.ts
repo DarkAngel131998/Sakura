@@ -50,9 +50,9 @@ export class StaffComponent implements OnInit {
 
   showModal(id: number = null): void {
     if (id == null) {
-      this.title = 'Add new Staff';
+      this.title = 'Add new Project';
     } else {
-      this.title = 'Edit Staff';
+      this.title = 'Edit a Project';
     }
     this.id = id;
     this.isVisible = true;
