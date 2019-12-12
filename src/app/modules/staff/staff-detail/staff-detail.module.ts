@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StaffDetailComponent } from './staff-detail.component';
+import { NzTableModule } from 'ng-zorro-antd/table';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    NzTableModule
   ],
-  declarations: [StaffDetailComponent]
+  declarations: [StaffDetailComponent, NzTableModule]
 })
-export class StaffDetailModule { }
+export class StaffDetailModule {
+ }
